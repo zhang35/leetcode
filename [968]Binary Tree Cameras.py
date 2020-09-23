@@ -39,17 +39,16 @@
 #  Related Topics 树 深度优先搜索 动态规划 
 #  👍 171 👎 0
 
-
-# leetcode submit region begin(Prohibit modification and deletion)
-# Definition for a binary tree node.
 from typing import List
 
-
+# Definition for a binary tree node.
 class TreeNode:
     def __init__(self, x):
         self.val = x
         self.left = None
         self.right = None
+
+# leetcode submit region begin(Prohibit modification and deletion)
 
 # 官方题解…
 class Solution:
