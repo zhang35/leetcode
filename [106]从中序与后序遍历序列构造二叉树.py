@@ -54,16 +54,15 @@ inorder = [9,3,15,20,7]
 postorder = [9,15,7,20,3]
 class Solution:
     def buildTree(self, inorder: List[int], postorder: List[int]) -> TreeNode:
-        def fun(root, l, r, inorder, postorder):
+        def fun(root, l, r):
             if l > r : return
             node = TreeNode(postorder[root])
-            k = l
-            while k<r and inorder[k]!=postorder[root]: k = k+1
-            node.left = fun(root-1-r+k, l, k-1, inorder, postorder)
-            node.right = fun(root-1, k+1, r, inorder, postorder)
+            k = inorder.index(postorder[root])
+            node.left = fun(root-1-(r-k), l, k-1)
+            node.right = fun(root-1, k+1, r)
             return node
         n = len(postorder)
-        return fun(n-1, 0, n-1, inorder, postorder)
+        return fun(n-1, 0, n-1)
 
 # leetcode submit region end(Prohibit modification and deletion)
 s = Solution()
