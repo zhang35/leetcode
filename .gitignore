@@ -1,2 +1,4 @@
 doc
 *.json
+.DS_Store
+.idea
