@@ -60,5 +60,17 @@
 
 class Solution:
     def detectCycle(self, head: ListNode) -> ListNode:
-        
+        p1 = p2 = head
+        while True:
+            if p1: p1 = p1.next
+            if p2: p2 = p2.next
+            if p2: p2 = p2.next
+            else: return None
+            if p1==p2:
+                p2 = head
+                if p1 == p2: return p1
+                while True:
+                    p1 = p1.next
+                    p2 = p2.next
+                    if p1 == p2: return p1
 # leetcode submit region end(Prohibit modification and deletion)
