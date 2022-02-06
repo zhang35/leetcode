@@ -40,10 +40,15 @@
 class Solution:
     def sumOfUnique(self, nums: List[int]) -> int:
         ss = set()
+        ss2 = set()
         ret = 0
         for num in nums:
-            if num not in ss:
-                ss.add(num)
-                ret += num
+            if num not in ss2:
+                if num not in ss:
+                    ss.add(num)
+                    ret += num
+                else:
+                    ret -= num
+                    ss2.add(num)
         return ret
 # leetcode submit region end(Prohibit modification and deletion)
