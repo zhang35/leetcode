@@ -1,14 +1,18 @@
-def partition(array, low, high):
-    pivot = array[high]
-    i = low - 1
+def partition(arr, low, high):
+    pivot = arr[high]
+    i = low
+    
+    # we start from the leftmost element and keep track of the index of smaller (or equal) elements as i.
+    # While traversing, if we find a smaller element, we swap the current element with arr[i].
+    # Otherwise, we ignore the current element.
     for j in range(low, high):
-        if array[j] <= pivot:
-            i = i + 1
-            array[i], array[j] = array[j], array[i]
-
-    # swap the pivot element with the greater element specified by i
-    array[i + 1], array[high] = array[high], array[i + 1]
-    return i + 1
+        if arr[j] < pivot:
+            arr[i], arr[j] = arr[j], arr[i]
+            i += 1
+    
+    # Move pivot after smaller elements and return its position
+    arr[i], arr[high] = arr[high], arr[i]
+    return i
 
 
 def quickSort(array, low, high):
