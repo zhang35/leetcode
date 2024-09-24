@@ -61,6 +61,34 @@
 #
 
 # @lc code=start
+
+# This iterative method exceeded time limit.
+# Memo is needed.
+
+# class Solution:
+#     def wordBreak(self, s: str, wordDict: List[str]) -> bool:
+#         n = len(s)
+#         possible_j = []
+#         i = 0
+#         while i < n:
+#             while i < n and s[:i+1] not in wordDict:
+#                 i += 1
+#             if i < n:
+#                 possible_j.append(i)
+#             i += 1
+
+#         if not possible_j:
+#             return False
+
+#         if possible_j[-1] == n - 1:
+#             return True
+        
+#         for j in possible_j:
+#             if self.wordBreak(s[j+1:], wordDict):
+#                 return True
+                
+#         return False
+
 class Solution:
     def wordBreak(self, s: str, wordDict: List[str]) -> bool:
         dp = [True] + [False] * len(s)
