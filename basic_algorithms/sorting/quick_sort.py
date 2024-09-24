@@ -32,3 +32,6 @@ print(data)
 
 quickSort(data, 0, len(data)-1)
 print(data)
+
+# [1, 7, 4, 1, 10, 9, -2]
+# [-2, 1, 1, 4, 7, 9, 10]
