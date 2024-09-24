@@ -62,6 +62,11 @@ class Solution:
 
         # count = n/5 + n/25 + n/125 + ... + 0
         
+        # If n=5 ... there will be 1(5)
+        # If n=10 ... there will be 2(5)
+        # If n=15 ... there will be 3(5)
+        # If n=25 ... there will be 5(5) + 1 (5)
+        
         ret = 0
 
         while n:
