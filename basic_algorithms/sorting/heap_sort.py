@@ -42,8 +42,19 @@ def heapSort(arr):
         # call max heapify on the reduced heap
 		heapify(arr, i, 0)
 
+# # A heapsort can also be implemented with python's heapq lib:
+# import heapq
+
+# def heapsort(iterable):
+#     h = []
+#     for value in iterable:
+#         heapq.heappush(h, value)
+#     return [heapq.heappop(h) for i in range(len(h))]
 
 arr = [12, 11, 13, 5, 6, 7, ]
 print(arr)
 heapSort(arr)
 print(arr)
+
+# [12, 11, 13, 5, 6, 7]
+# [5, 6, 7, 11, 12, 13]
