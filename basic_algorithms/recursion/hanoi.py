@@ -7,14 +7,14 @@ def hanoi(a: str, b: str, c: str, n: int) -> None:
         print(f"{a} -> {c}")
         return
 
-    # temporarily move the smaller ones to b, to reveal the biggest one on A
+    # temporarily move the smaller ones to b with c as auxiliary, to reveal the biggest one on A
     # ignore the biggest ones on c, as they make no difference
     hanoi(a, c, b, n-1)
 
-    # move the biggest one at the bottom
+    # move the biggest one at the bottom from a to c
     print(f"{a} -> {c}")
 
-    # move the rest from b to c
+    # move the rest from b to c with a as auxiliary
     hanoi(b, a, c, n-1)
 
 hanoi('a', 'b', 'c', 4)

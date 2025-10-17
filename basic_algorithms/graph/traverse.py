@@ -41,6 +41,13 @@ def bfs(graph, start):
     print("")
 
 
+# Visual representation of the graph:
+#     A
+#    / \
+#   B   C
+#  / \   \
+# D   E---F
+
 graph = {
     'A': ['B', 'C'],
     'B': ['A', 'D', 'E'],
@@ -49,6 +56,7 @@ graph = {
     'E': ['B', 'F'],
     'F': ['C', 'E'],
 }
+
 dfs(graph, 'A')  # Output: A C F E B D
 dfs_rec(graph, 'A')  # Output: A B D E F C
 bfs(graph, 'A')  # Output: A B C D E F

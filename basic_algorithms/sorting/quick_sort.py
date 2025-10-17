@@ -35,3 +35,14 @@ print(data)
 
 # [1, 7, 4, 1, 10, 9, -2]
 # [-2, 1, 1, 4, 7, 9, 10]
+
+### Alternative implementation
+
+def quicksort2(arr):
+    if len(arr) <= 1:
+        return arr
+    else:
+        pivot = arr[0]
+        left = [x for x in arr[1:] if x < pivot]
+        right = [x for x in arr[1:] if x >= pivot]
+        return quicksort2(left) + [pivot] + quicksort2(right)
